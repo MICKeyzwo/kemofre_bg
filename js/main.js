@@ -32,7 +32,7 @@ window.addEventListener("load", () => {
     margin.setValue(20);
     margin.on("input", render);
     var color = document.getElementById("color");
-    color.addEventListener("change", e => console.log(color.value))
+    color.addEventListener("change", render);
 
     var image = new Image();
     var renderdImage = new Image();
