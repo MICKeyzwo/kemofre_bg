@@ -1,0 +1,19 @@
+{
+  "name": "kemofre_bg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MICKeyzwo/kemofre_bg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MICKeyzwo/kemofre_bg/issues"
+  },
+  "homepage": "https://github.com/MICKeyzwo/kemofre_bg#readme"
+}
