@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
         }
     );
     scale.setValue(1);
-    scale.on("input", render);
+    scale.on("change", render);
     var rad_size = new InputSyncer(document.getElementById("rad").getElementsByTagName("input"),
         {
             min: 0,
@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
         }
     );
     rad_size.setValue(20);
-    rad_size.on("input", render);
+    rad_size.on("change", render);
     var margin = new InputSyncer(document.getElementById("margin").getElementsByTagName("input"),
         {
             min: 0,
@@ -30,9 +30,28 @@ window.addEventListener("load", () => {
         }
     );
     margin.setValue(20);
-    margin.on("input", render);
+    margin.on("change", render);
     var color = document.getElementById("color");
     color.addEventListener("change", render);
+    var realTimeFlg = document.getElementById("realTime");
+    realTimeFlg.checked = false;
+    realTimeFlg.addEventListener("change", e => {
+        if(e.target.checked) {
+            scale.rem("change", render);
+            rad_size.rem("change", render);
+            margin.rem("change", render);
+            scale.on("input", render);
+            rad_size.on("input", render);
+            margin.on("input", render);
+        } else {
+            scale.rem("input", render);
+            rad_size.rem("input", render);
+            margin.rem("input", render);
+            scale.on("change", render);
+            rad_size.on("change", render);
+            margin.on("change", render);
+        }
+    });
 
     var image = new Image();
     var renderdImage = new Image();
